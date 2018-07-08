@@ -7,8 +7,9 @@ var app = new Vue({
     },
     methods: {
       check: function() {
-        var arr = this.text.split(" ");
-        document.getElementById("demo").innerHTML = arr;
+        var textWords = this.text.split(" ");
+        var inputWords = this.input.split(" ");
+        document.getElementById("demo").innerHTML = inputWords;
       }
     }
   })

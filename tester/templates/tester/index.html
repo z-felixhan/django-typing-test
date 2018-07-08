@@ -11,7 +11,7 @@
   <div>
     [[ input ]]
   </div>
-  <input v-model="input" placeholder="Start here">
+  <input v-model="input" v-on:keydown.space="check" placeholder="Start here">
   <p id="demo"></p>
 </div>
 
