@@ -9,7 +9,14 @@ var app = new Vue({
       check: function() {
         var textWords = this.text.split(" ");
         var inputWords = this.input.split(" ");
-        document.getElementById("demo").innerHTML = inputWords;
+        var length = inputWords.length;
+
+        //Testing: true if strings are equal, false otherwise
+        document.getElementById("answer").innerHTML = (textWords[length- 1] === inputWords[length - 1]);
+
+        //Testing
+        //document.getElementById("inputWords").innerHTML = inputWords;
+        //document.getElementById("length").innerHTML = length;
       }
     }
   })
