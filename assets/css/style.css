@@ -1,3 +1,7 @@
-#test {
+#spans {
     text-align: justify;
+}
+
+input {
+    position: relative;
 }

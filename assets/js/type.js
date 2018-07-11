@@ -6,17 +6,39 @@ var app = new Vue({
       input: ''
     },
     methods: {
+      //Checks if the input corresponds to the text
       check: function() {
+        var text = this.text;
         var textWords = this.text.split(" ");
         var inputWords = this.input.split(" ");
         var length = inputWords.length;
 
-        //Testing: true if strings are equal, false otherwise
-        document.getElementById("answer").innerHTML = (textWords[length- 1] === inputWords[length - 1]);
+        //If input and word matches, word color becomes green
+        if (textWords[length - 1] === inputWords[length - 1]) {
+          document.getElementById(length - 1).setAttribute("class", "green-text");
+        }
+        //Otherwise word becomes red
+        else {
+          document.getElementById(length - 1).setAttribute("class", "red-text");
+        }
 
-        //Testing
-        //document.getElementById("inputWords").innerHTML = inputWords;
-        //document.getElementById("length").innerHTML = length;
+        //Testing: true if strings are equal, false otherwise
+        document.getElementById("answer").innerHTML = (textWords[length - 1] === inputWords[length - 1]);
+      },
+      //Places new span elements for each word in the text array
+      create: function() {
+        var textWords = this.text.split(" ");
+        var element;
+        var node;
+        var i;
+
+        for (i = 0; i < textWords.length; i++) {
+          element = document.createElement("SPAN");
+          node = document.createTextNode(textWords[i] + " ");
+          element.appendChild(node);
+          element.setAttribute("id", i);
+          document.getElementById("spans").appendChild(element);
+        }
       }
     }
   })
@@ -25,4 +47,9 @@ function useCheck() {
   app.check();
 }
 
+function useCreate() {
+  app.create();
+}
+
+useCreate();
 useCheck();
