@@ -7,7 +7,7 @@
 <div id="app">
   <div id="spans">
   </div>
-  <input v-model="input" v-on:keydown.space="check" placeholder="Start here">
+  <input v-model="input" v-on:keydown.delete="prevent" v-on:keydown.space="check" placeholder="Start here">
 
   <!-- Testing -->
   <p id="inputWords"></p>

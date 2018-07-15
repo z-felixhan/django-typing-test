@@ -39,6 +39,10 @@ var app = new Vue({
           element.setAttribute("id", i);
           document.getElementById("spans").appendChild(element);
         }
+      },
+      //Prevents backspace if there is a blank space
+      prevent: function() {
+
       }
     }
   })
