@@ -39,6 +39,13 @@ var app = new Vue({
           document.getElementById("spans").appendChild(element);
         }
       },
+      //Make the current word blue
+      next: function() {
+        var inputWords = this.input.split(" ");
+        var length = inputWords.length;
+
+        document.getElementById(length - 1).setAttribute("class", "blue-text");
+      },
       //Prevents backspace if there is a blank space
       prevent: function(e) {
         var input = this.input;
@@ -53,4 +60,9 @@ function useCreate() {
   app.create();
 }
 
+function useNext() {
+  app.next();
+}
+
 useCreate();
+useNext();
