@@ -8,7 +8,6 @@ var app = new Vue({
     methods: {
       //Checks if the input corresponds to the text
       check: function() {
-        var text = this.text;
         var textWords = this.text.split(" ");
         var inputWords = this.input.split(" ");
         var length = inputWords.length;
@@ -41,19 +40,17 @@ var app = new Vue({
         }
       },
       //Prevents backspace if there is a blank space
-      prevent: function() {
+      prevent: function(e) {
+        var input = this.input;
 
+        if (input[input.length - 1] === " ")
+          e.preventDefault();
       }
     }
   })
-
-function useCheck() {
-  app.check();
-}
 
 function useCreate() {
   app.create();
 }
 
 useCreate();
-useCheck();
