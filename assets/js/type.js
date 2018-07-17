@@ -13,6 +13,10 @@ var app = new Vue({
         var inputWords = this.input.split(" ");
         var length = inputWords.length;
 
+        //Gets the node value of score
+        var x = document.getElementById("score").childNodes[0];
+        var score = parseInt(x.nodeValue);
+
         //If input and word matches, word color becomes green
         if (textWords[length - 1] === inputWords[length - 1]) {
           document.getElementById(length - 1).setAttribute("class", "green-text");
@@ -55,6 +59,9 @@ var app = new Vue({
 
         if (input[input.length - 1] === " ")
           e.preventDefault();
+      },
+      startScore: function() {
+        document.getElementById("score").innerHTML = 0;
       }
     }
   })
@@ -67,5 +74,10 @@ function useNext() {
   app.next();
 }
 
+function useStartScore() {
+  app.startScore();
+}
+
 useCreate();
 useNext();
+useStartScore();
