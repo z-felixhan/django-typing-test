@@ -2,7 +2,7 @@ var app = new Vue({
     delimiters: ['[[', ']]'],
     el: '#app',
     data: {
-      text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.!',
+      text: 'We hold these truths to be self-evident, that all men are created equal, that they are endowed by their Creator with certain unalienable Rights, that among these are Life, Liberty and the pursuit of Happiness.',
       input: ''
     },
     methods: {
@@ -28,7 +28,7 @@ var app = new Vue({
 
         //Testing: true if strings are equal, false otherwise
         document.getElementById("answer").innerHTML = (textWords[length - 1] === inputWords[length - 1]);
-        document.getElementById("score").innerHTML = score;
+        document.getElementById("score").innerHTML = score + "/" + length;
       },
       //Places new span elements for each word in the text array
       create: function() {
